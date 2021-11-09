@@ -2,8 +2,8 @@
 import './style.css';
 
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+const appDiv: HTMLElement = document.querySelector('#app');
+appDiv.innerHTML = `<h1>Is it yes or is it no</h1>`;
 
 //
 
