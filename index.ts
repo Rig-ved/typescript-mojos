@@ -3,16 +3,11 @@ import './style.css';
 
 interface Person {
   name: string;
-  age?: number;
+  age: number;
+  address: {};
 }
 
-const person: Person = {
-  name: 'Todd',
-  age: 12,
+//Pick type
+const person: Pick<Person, 'name'> = {
+  name: 'todd',
 };
-// Mapped type
-function freeze<T>(obj: T): Readonly<T> {
-  return Object.freeze(obj);
-}
-
-const frozenPerson = freeze(person);
