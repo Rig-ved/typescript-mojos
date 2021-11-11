@@ -1,13 +1,30 @@
 // Import stylesheets
 import './style.css';
 
-interface Person {
-  name: string;
-  age: number;
-  address: {};
+// Intersection types
+
+interface Music {
+  type: string;
+  solo: boolean;
 }
 
-//Pick type
-const person: Pick<Person, 'name'> = {
-  name: 'todd',
-};
+interface Guitar {
+  classical: boolean;
+}
+
+type percussionSolo =  Music & Guitar
+
+const gibson:Guitar =  {
+  classical:true
+}
+
+
+console.log(gibson)
+
+const orchestra:percussionSolo = {
+    type:'strings',
+    solo:true,
+    ...gibson
+}
+
+console.log(orchestra)
