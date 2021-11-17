@@ -8,23 +8,11 @@ interface Music {
   solo: boolean;
 }
 
-interface Guitar {
-  classical: boolean;
+enum vehicles {
+  TwoWheeler,
+  ThreeWheeler,
+  FourWheeler,
 }
 
-type percussionSolo =  Music & Guitar
-
-const gibson:Guitar =  {
-  classical:true
-}
-
-
-console.log(gibson)
-
-const orchestra:percussionSolo = {
-    type:'strings',
-    solo:true,
-    ...gibson
-}
-
-console.log(orchestra)
+console.log(vehicles[1] === 'ThreeWheeler');
+console.log(vehicles.ThreeWheeler);
