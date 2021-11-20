@@ -1,13 +1,10 @@
-interface EmployeeType {
-  id: number
-  fullname: string
-  role: string
-}
+const collection = [
+  { name: 'Stefan Baumgartner', age: 37 },
 
-let employees: Record<string, EmployeeType> = {
-  "john": { id: 1, fullname: "John Doe", role: "Designer" },
-  "Fall": { id: 2, fullname: "Ibrahima Fall", role: "Developer" },
-  'Sara': { id: 3, fullname: "Sara Duckson", role: "Developer" },
-}
+  { name: 'D.', age: 36 },
 
-console.log(employees['john'])
+  { name: 'C.', age: 2 },
+];
+
+var anc = collection.filter(Boolean);
+console.log(anc);
