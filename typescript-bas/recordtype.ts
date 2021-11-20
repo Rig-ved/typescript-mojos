@@ -9,5 +9,5 @@ let employees: Record<string, EmployeeType> = {
   Fall: { id: 2, fullname: 'Ibrahima Fall', role: 'Developer' },
   Sara: { id: 3, fullname: 'Sara Duckson', role: 'Developer' },
 };
-
 console.log(employees['john']);
+
