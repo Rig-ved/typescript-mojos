@@ -1,30 +1,36 @@
-const collection = [
-  { name: 'Stefan Baumgartner', age: 37 },
+const backlog = {
+  releases: [
+    {
+      names: 'sprint12',
+      epics: [
+        {
+          name: 'Account management',
+          tasks: [
+            { name: 'billed', priority: 'High' },
+            { name: 'payment', priority: 'low' },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
-  { name: 'D.', age: 36 },
+type unArray<T> = T extends Array<infer U> ? Array<U> : T;
+type lol = typeof backlog['releases'];
+type Release = unArray<typeof backlog['releases']>;
 
-  { name: 'C.', age: 2 },
+const release: lol = [
+  {
+    names: 'sasas',
+    // assasas:'',
+    epics: [
+      {
+        name: 'Account management',
+        tasks: [
+          { name: 'billed', priority: 'High' },
+          { name: 'payment', priority: 'low' },
+        ],
+      },
+    ],
+  },
 ];
-
-var anc = collection.filter(Boolean);
-console.log(anc);
-
-
-
-type PostId = number;
-type Day = string;
-and then rewrite our original types using these aliases:
-
-type Post = {
-  id: PostId;
-  title: string;
-  author: string;
-  day: Day;
-  status: string;
-  isSticky: boolean;
-};
-
-type State = {
-  posts: Partial< Record<PostId, Post> >;
-  days: Partial< Record<Day, PostId[]> >;
-};
